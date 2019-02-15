@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="GuestBooker.Pages.Main.LoginPage">
+    <ContentPage.Content>
+        <Grid>
+            <!-- Fondo -->
+            <Image Source="bg_tables" Aspect="AspectFill"/>
+            <!-- Fin Fondo -->
+            
+            <!-- Logo y Logins -->
+            <Grid HorizontalOptions="FillAndExpand" HeightRequest="400" VerticalOptions="CenterAndExpand" BackgroundColor="Green">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" x:Name="ColLogoSpacing"/>
+                    <ColumnDefinition Width="400" x:Name="ColLogo"/>
+                    <ColumnDefinition Width="*" x:Name="ColLogin"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Logo -->
+                <Image Grid.Column="1" x:Name="LogoImg" Source="icon_wh_logotxt.png" Aspect="AspectFit" Scale="0.8" Opacity="0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TestCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <!-- Fin Logo -->
+                
+                <!-- Logins -->
+                <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="0" Opacity="0">
+                    <Image Source="icon_wh_lineV" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="Start"/>
+                    <cv:CarouselViewControl x:Name="LoginsCV" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                            Position="{Binding PosCV, Mode=TwoWay}">
+                        <cv:CarouselViewControl.ItemsSource>
+                            <x:Array Type="{x:Type View}">
+                                <BoxView BackgroundColor="Green"/>
+                                <BoxView BackgroundColor="Red"/>
+                            </x:Array>
+                        </cv:CarouselViewControl.ItemsSource>
+                    </cv:CarouselViewControl>
+                </StackLayout>
+                <!-- Fin Logins -->
+
+            </Grid>
+            <!-- Logo y Logins -->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

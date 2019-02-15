@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.62955-pre2" />
+    <PackageReference Include="modernhttpclient" Version="2.4.2" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Plugin.VersionTracking" Version="2.1.0" />
+    <PackageReference Include="Unity" Version="5.8.13" />
+    <PackageReference Include="Validation" Version="2.4.18" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="Xam.Plugin.Version" Version="1.0.0" />
+    <PackageReference Include="Xam.Plugins.Messaging" Version="5.2.0" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataServices\" />
+    <Folder Include="DataServices\Base\" />
+    <Folder Include="Helper\" />
+    <Folder Include="Models\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Pages\Main\" />
+    <Folder Include="Pages\Navigation\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Exceptions\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Base\" />
+    <Folder Include="ViewModels\Main\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+</Project>
