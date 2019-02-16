@@ -33,5 +33,10 @@
 	<string>GuestBooker</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gotham.otf</string>
+		<string>GothamMedium.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -1,8 +1,37 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GuestBooker.App">
     <Application.Resources>
+        
+        <ResourceDictionary>
+            
+            <!-- Fonts -->
+            <OnPlatform x:TypeArguments="x:String" x:Key="Gotham">
+                <On Platform="Android" Value="Gotham.otf#Open Sans" />
+                <On Platform="iOS" Value="Gotham"/>
+            </OnPlatform>
+            
+            <OnPlatform x:TypeArguments="x:String" x:Key="GothamMedium">
+                <On Platform="Android" Value="GothamMedium.otf#Open Sans" />
+                <On Platform="iOS" Value="GothamMedium"/>
+            </OnPlatform>
+            <!-- Fin Fonts -->
+            
+            <!-- Estilo Labels -->
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource Gotham}"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="TitleStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="44"/>
+            </Style>
+            <!-- Estilo Labels -->
+            
+            
+            
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>

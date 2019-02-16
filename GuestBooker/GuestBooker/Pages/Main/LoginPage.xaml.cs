@@ -19,19 +19,22 @@ namespace GuestBooker.Pages.Main
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            Task.Delay(2000);
-            LogoImg.FadeTo(1, 4000, Easing.Linear);
+            AnimationInitAsync();
         }
 
         // Animacion del logo inicial
         private async Task AnimationInitAsync()
         {
             //LogoImg.Opacity = 0;
-            //await Task.Delay(2000);
-            await LogoImg.FadeTo(1, 4000, Easing.Linear);
+            await Task.Delay(2000);
+            await LogoImg.FadeTo(1, 1200, Easing.SinIn);
             
-            //var MoveLogoAnimation = new Animation(v => ColLogoSpacing.Width = new GridLength(v, GridUnitType.Star), 1, 0);
-            //MoveLogoAnimation.Commit(this, "MoveLogoAnimation", 16, 1000, Easing.Linear);
+            var MoveLogoAnimation = new Animation(v => ColLogoSpacing.Width = new GridLength(v, GridUnitType.Star), 1, 0);
+            MoveLogoAnimation.Commit(this, "MoveLogoAnimation", 16, 1000, Easing.SinInOut, (v, c) => 
+            {
+                BgDark.FadeTo(0.5, 1200);
+                Logins.FadeTo(1, 1200);
+            });
         }
     }
 }

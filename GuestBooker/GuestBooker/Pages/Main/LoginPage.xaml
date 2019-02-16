@@ -6,16 +6,19 @@
     <ContentPage.Content>
         <Grid>
             <!-- Fondo -->
-            <Image Source="bg_tables" Aspect="AspectFill"/>
+            <Image Source="bg_tables.jpg" Aspect="AspectFill"/>
             <!-- Fin Fondo -->
             
             <!-- Logo y Logins -->
-            <Grid HorizontalOptions="FillAndExpand" HeightRequest="400" VerticalOptions="CenterAndExpand" BackgroundColor="Green">
+            <Grid HorizontalOptions="FillAndExpand" HeightRequest="400" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" x:Name="ColLogoSpacing"/>
                     <ColumnDefinition Width="400" x:Name="ColLogo"/>
                     <ColumnDefinition Width="*" x:Name="ColLogin"/>
                 </Grid.ColumnDefinitions>
+                
+                <!-- Fondo Negro -->
+                <BoxView Grid.Column="0" x:Name="BgDark" Grid.ColumnSpan="3" BackgroundColor="Black" Opacity="0"/>
 
                 <!-- Logo -->
                 <Image Grid.Column="1" x:Name="LogoImg" Source="icon_wh_logotxt.png" Aspect="AspectFit" Scale="0.8" Opacity="0">
@@ -26,13 +29,36 @@
                 <!-- Fin Logo -->
                 
                 <!-- Logins -->
-                <StackLayout Grid.Column="2" Orientation="Horizontal" Spacing="0" Opacity="0">
-                    <Image Source="icon_wh_lineV" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="Start"/>
+                <StackLayout Grid.Column="2" x:Name="Logins" Orientation="Horizontal" Spacing="0" Opacity="0">
+                    <Image Source="icon_wh_lineV.png" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="Start"/>
                     <cv:CarouselViewControl x:Name="LoginsCV" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                                            Position="{Binding PosCV, Mode=TwoWay}">
+                                            Position="{Binding PosCV, Mode=TwoWay}" Margin="30, 0">
                         <cv:CarouselViewControl.ItemsSource>
                             <x:Array Type="{x:Type View}">
-                                <BoxView BackgroundColor="Green"/>
+                                <!-- Logins -->
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <StackLayout Grid.Row="0">
+                                        <Label Text="v2.0.0" Style="{StaticResource LabelStyle}" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                    
+                                    <Label Grid.Row="1" Text="welcome" Style="{StaticResource TitleStyle}" HorizontalTextAlignment="Start"/>
+                                    
+                                    <!-- Login ID -->
+                                    <!-- Fin Login ID -->
+                                    
+                                    <!-- Login user y pass -->
+                                    <!-- Fin Login user y pass  -->
+                                    
+                                    
+                                </Grid>
+                                <!-- Fin Logins -->
+                                
                                 <BoxView BackgroundColor="Red"/>
                             </x:Array>
                         </cv:CarouselViewControl.ItemsSource>
