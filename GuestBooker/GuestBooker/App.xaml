@@ -27,10 +27,27 @@
             <Style x:Key="TitleStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="FontSize" Value="44"/>
             </Style>
-            <!-- Estilo Labels -->
-            
-            
-            
+            <!-- Fin Estilo Labels -->
+
+            <!-- Estilo Entrys -->
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="FontFamily" Value="{StaticResource Gotham}"/>
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="FontSize" Value="19"/>
+                <Setter Property="PlaceholderColor" Value="White"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="IsSpellCheckEnabled" Value="false"/>
+                <Setter Property="Opacity" Value="0.7"/>
+                <Style.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="true">
+                        <Setter Property="Opacity" Value="1"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <!-- Fin Estilo Entrys -->
+
+
+
         </ResourceDictionary>
 
     </Application.Resources>

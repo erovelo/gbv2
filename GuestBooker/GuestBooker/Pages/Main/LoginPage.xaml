@@ -2,11 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:ctrls="clr-namespace:GuestBooker.Controls"
+             xmlns:lang="clr-namespace:GuestBooker.Helper;assembly=GuestBooker"
              x:Class="GuestBooker.Pages.Main.LoginPage">
     <ContentPage.Content>
         <Grid>
             <!-- Fondo -->
-            <Image Source="bg_tables.jpg" Aspect="AspectFill"/>
+            <Image Source="bg_tables.jpg" Aspect="AspectFill">
+            </Image>
             <!-- Fin Fondo -->
             
             <!-- Logo y Logins -->
@@ -47,15 +50,33 @@
                                         <Label Text="v2.0.0" Style="{StaticResource LabelStyle}" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
                                     </StackLayout>
                                     
-                                    <Label Grid.Row="1" Text="welcome" Style="{StaticResource TitleStyle}" HorizontalTextAlignment="Start"/>
-                                    
-                                    <!-- Login ID -->
-                                    <!-- Fin Login ID -->
-                                    
-                                    <!-- Login user y pass -->
-                                    <!-- Fin Login user y pass  -->
-                                    
-                                    
+                                    <Label Grid.Row="1" Text="{lang:Translate Welcome}" Style="{StaticResource TitleStyle}" HorizontalTextAlignment="Start"/>
+
+                                    <Grid Grid.Row="2">
+                                        <!-- Login ID -->
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="100, 25, 100, 0">
+                                            <ctrls:CustomEntry Placeholder="access code" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand"/>
+                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 10">
+                                                <ctrls:CustomButton.Content>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="recuperar contraseña" Style="{StaticResource LabelStyle}" VerticalOptions="CenterAndExpand"/>
+                                                        <Image Source="icon_wh_lock.png" VerticalOptions="CenterAndExpand" WidthRequest="25" HeightRequest="25"/>
+                                                    </StackLayout>
+                                                </ctrls:CustomButton.Content>
+                                            </ctrls:CustomButton>
+                                            
+                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20">
+                                                <ctrls:CustomButton.Content>
+                                                    <Image Source="icon_wh_arrow_right.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40"/>
+                                                </ctrls:CustomButton.Content>
+                                            </ctrls:CustomButton>
+                                            
+                                        </StackLayout>
+                                        <!-- Fin Login ID -->
+
+                                        <!-- Login user y pass -->
+                                        <!-- Fin Login user y pass  -->
+                                    </Grid>
                                 </Grid>
                                 <!-- Fin Logins -->
                                 
