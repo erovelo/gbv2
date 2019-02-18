@@ -55,11 +55,11 @@
                                     <Grid Grid.Row="2">
                                         <!-- Login ID -->
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="true">
-                                            <ctrls:CustomEntry Placeholder="access code" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 0"/>
+                                            <ctrls:CustomEntry Placeholder="{lang:Translate AccessCode}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 0"/>
                                             <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="50, 10">
                                                 <ctrls:CustomButton.Content>
                                                     <StackLayout Orientation="Horizontal">
-                                                        <Label Text="recuperar contraseña" Style="{StaticResource LabelStyle}" VerticalOptions="CenterAndExpand"/>
+                                                        <Label Text="{lang:Translate RecoverPassword}" Style="{StaticResource LabelStyle}" VerticalOptions="CenterAndExpand"/>
                                                         <Image Source="icon_wh_lock.png" VerticalOptions="CenterAndExpand" WidthRequest="25" HeightRequest="25"/>
                                                     </StackLayout>
                                                 </ctrls:CustomButton.Content>

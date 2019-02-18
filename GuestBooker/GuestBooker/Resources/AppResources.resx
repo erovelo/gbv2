@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AccessCode" xml:space="preserve">
+    <value>access code</value>
+  </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>recover password</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>welcome</value>
   </data>

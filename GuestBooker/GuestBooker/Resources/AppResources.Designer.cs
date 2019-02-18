@@ -61,6 +61,24 @@ namespace GuestBooker.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to access code.
+        /// </summary>
+        internal static string AccessCode {
+            get {
+                return ResourceManager.GetString("AccessCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to recover password.
+        /// </summary>
+        internal static string RecoverPassword {
+            get {
+                return ResourceManager.GetString("RecoverPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to welcome.
         /// </summary>
         internal static string Welcome {
