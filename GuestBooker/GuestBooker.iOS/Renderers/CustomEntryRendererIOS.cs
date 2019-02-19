@@ -11,10 +11,6 @@ namespace GuestBooker.iOS.Renderers
 {
     public class CustomEntryRendererIOS : EntryRenderer
     {
-        public CustomEntryRendererIOS()
-        {
-        }
-
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CarouselView.FormsPlugin.iOS;
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace GuestBooker.iOS
@@ -24,8 +25,8 @@ namespace GuestBooker.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();
-
             LoadApplication(new App());
+            AnimationViewRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

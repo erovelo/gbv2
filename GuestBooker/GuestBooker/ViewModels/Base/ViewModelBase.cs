@@ -11,35 +11,9 @@ namespace GuestBooker.ViewModels.Base
         protected readonly IDialogService DialogService;
         protected readonly INavigationService NavigationService;
 
-        private bool _isBusy;
-        public bool IsBusy
-        {
-            get
-            {
-                return _isBusy;
-            }
+        public bool IsBusy { get; set; }
 
-            set
-            {
-                _isBusy = value;
-                RaisePropertyChanged(() => IsBusy);
-            }
-        }
-
-        private bool _isEnable;
-        public bool IsEnable
-        {
-            get
-            {
-                return _isEnable;
-            }
-
-            set
-            {
-                _isEnable = value;
-                RaisePropertyChanged(() => IsEnable);
-            }
-        }
+        public bool IsEnable { get; set; }
 
         public ViewModelBase()
         {

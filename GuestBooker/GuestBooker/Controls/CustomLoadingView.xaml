@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+      x:Class="GuestBooker.Controls.CustomLoadingView" 
+      BackgroundColor="#8000" 
+      IsVisible="false"
+      Opacity="0">
+    <!--
+    <ActivityIndicator x:Name="Indicator" WidthRequest="50" HeightRequest="50" IsRunning="false" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Color="White"/>
+    -->
+    
+    <lottie:AnimationView 
+        x:Name="Indicator"
+        Animation="LottieGears.json"
+        Loop="true"
+        AutoPlay="false"
+        Speed="1"
+        WidthRequest="75"
+        HeightRequest="75"
+        VerticalOptions="CenterAndExpand"
+        HorizontalOptions="CenterAndExpand"/>
+    
+</Grid>

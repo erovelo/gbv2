@@ -87,6 +87,9 @@
 
             </Grid>
             <!-- Logo y Logins -->
+            
+            <ctrls:CustomLoadingView IsRunning="{Binding IsBusy}"/>
+            
         </Grid>
     </ContentPage.Content>
 </ContentPage>

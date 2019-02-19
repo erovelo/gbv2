@@ -8,32 +8,20 @@ namespace GuestBooker.ViewModels.Main
 {
     public class LoginViewModel : ViewModelBase
     {
-        private int _PosCV;
-        public int PosCV { get => _PosCV; set { _PosCV = value; RaisePropertyChanged(() => PosCV); } }
+        // Pos del cv de formulario
+        public int PosCV { get; set; }
 
-        public LoginViewModel()
+        #region Commands
+        public ICommand LoginAccessCodeCommand => new Command(async () => LoginAccessCode());
+        private async Task LoginAccessCode()
         {
-            //Task<int> result = OnStart();
-        }
-
-        #region Loading
-        private async Task<int> OnStart()
-        {
-            try
-            {
-                await Task.Delay(1000);
-                await NavigationService.NavigateToAsync<HomeViewModel>(); // NAVEGA HACIA LOGIN
-            }
-            catch (Exception ex)
-            {
-                string error = ex.Message + ex.StackTrace;
-                await Application.Current.MainPage.DisplayAlert("Error", $"{error}", "Accept");
-            }
-            return 0;
+            IsBusy = true;
+            await Task.Delay(5000);
+            IsBusy = false;
         }
         #endregion
 
 
-        public ICommand TestCommand => new Command(() => PosCV = 2);
+        public ICommand TestCommand => new Command(() => PosCV = 1);
     }
 }
