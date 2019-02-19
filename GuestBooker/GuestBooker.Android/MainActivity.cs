@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
+using Lottie.Forms.Droid;
 
 namespace GuestBooker.Droid
 {
@@ -21,6 +22,8 @@ namespace GuestBooker.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CarouselViewRenderer.Init();
+            AnimationViewRenderer.Init();
+
             LoadApplication(new App());
         }
     }

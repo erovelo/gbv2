@@ -55,7 +55,8 @@
                                     <Grid Grid.Row="2">
                                         <!-- Login ID -->
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="true">
-                                            <ctrls:CustomEntry Placeholder="{lang:Translate AccessCode}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 0"/>
+                                            <ctrls:CustomEntry Placeholder="{lang:Translate AccessCode}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 0"
+                                                               ReturnCommand="{Binding LoginAccessCodeCommand}"/>
                                             <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="50, 10">
                                                 <ctrls:CustomButton.Content>
                                                     <StackLayout Orientation="Horizontal">

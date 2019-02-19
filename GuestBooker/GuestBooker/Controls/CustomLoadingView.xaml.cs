@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace GuestBooker.Controls
@@ -26,23 +27,24 @@ namespace GuestBooker.Controls
 
             if(propertyName == IsRunningProperty.PropertyName)
             {
-                if(IsRunning)
-                {
-                    IsVisible = true;
-
-                    Indicator.Speed = 0.5f;
-                    Indicator.Play();
-                    //Indicator.IsRunning = true;
-                    this.FadeTo(1, 400);
-                }
-                else
-                {
-                    this.FadeTo(0, 400);
-                    Indicator.Pause();
-                    //Indicator.IsRunning = false;
-                    IsVisible = false;
-                }
+                if (IsRunning) ShowLoadingAsync();
+                else HideLoadingAsync();
             }
+        }
+
+        async Task ShowLoadingAsync()
+        {
+            IsVisible = true;
+            Indicator.Speed = 0.5f;
+            Indicator.Play();
+            await this.FadeTo(1, 200);
+        }
+
+        async Task HideLoadingAsync()
+        {
+            await this.FadeTo(0, 200);
+            Indicator.Pause();
+            IsVisible = false;
         }
     }
 }
