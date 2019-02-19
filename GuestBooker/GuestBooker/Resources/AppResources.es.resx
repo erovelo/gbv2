@@ -120,4 +120,11 @@
   <data name="Welcome" xml:space="preserve">
     <value>bienvenido</value>
   </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>recuperar contraseña</value>
+  </data>
+  <data name="AccessCode" xml:space="preserve">
+    <value>código de acceso</value>
+  </data>
+  
 </root>

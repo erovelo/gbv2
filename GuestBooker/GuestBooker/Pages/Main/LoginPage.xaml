@@ -64,7 +64,7 @@
                                                     </StackLayout>
                                                 </ctrls:CustomButton.Content>
                                             </ctrls:CustomButton>
-                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20">
+                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20" Command="{Binding LoginAccessCodeCommand}">
                                                 <ctrls:CustomButton.Content>
                                                     <Image Source="icon_wh_arrow_right.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40"/>
                                                 </ctrls:CustomButton.Content>
