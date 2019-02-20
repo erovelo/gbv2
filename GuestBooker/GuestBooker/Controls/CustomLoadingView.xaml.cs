@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace GuestBooker.Controls
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomLoadingView : Grid
     {
         public bool IsRunning { get => (bool)GetValue(IsRunningProperty); set => SetValue(IsRunningProperty, value); }

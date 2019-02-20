@@ -56,6 +56,7 @@ namespace GuestBooker.ViewModels.Main
         private async Task LoginMailPass()
         {
             IsBusy = true;
+            IsShowingRecoverPassword = false;
             IsShowingConceptBranch = true;
             PosCV = 1;
             IsBusy = false;

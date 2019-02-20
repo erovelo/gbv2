@@ -134,9 +134,9 @@
                                         <!-- Concepto y Sucursal -->
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="{Binding IsShowingConceptBranch}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}">
                                             
-                                            <!-- Entry Mail -->
-                                            <Picker Title="sucursal" Margin="50,0"/>
-                                            <!-- Fin Entry Mail -->
+                                            <!-- Picker Concept -->
+                                            <ctrls:CustomPicker HorizontalOptions="FillAndExpand" Margin="50, 0"/>
+                                            <!-- Fin Picker Concept -->
                                             
                                             <!-- Entry Password -->
                                             <ctrls:CustomEntry Placeholder="{lang:Translate Password}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 10, 50, 0"
