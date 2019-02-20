@@ -120,8 +120,23 @@
   <data name="AccessCode" xml:space="preserve">
     <value>access code</value>
   </data>
+  <data name="Mail" xml:space="preserve">
+    <value>mail</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>password</value>
+  </data>
+  <data name="PasswordForget" xml:space="preserve">
+    <value>forgot password</value>
+  </data>
   <data name="RecoverPassword" xml:space="preserve">
     <value>recover password</value>
+  </data>
+  <data name="RecoverPasswordMsg" xml:space="preserve">
+    <value>enter your email address to retrieve your password</value>
+  </data>
+  <data name="LetsStarted" xml:space="preserve">
+    <value>let's get started</value>
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>welcome</value>

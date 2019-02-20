@@ -117,14 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Welcome" xml:space="preserve">
-    <value>bienvenido</value>
+  <data name="AccessCode" xml:space="preserve">
+    <value>código de acceso</value>
+  </data>
+  <data name="Mail" xml:space="preserve">
+    <value>correo</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>contraseña</value>
+  </data>
+  <data name="PasswordForget" xml:space="preserve">
+    <value>olvidó su contraseña</value>
   </data>
   <data name="RecoverPassword" xml:space="preserve">
     <value>recuperar contraseña</value>
   </data>
-  <data name="AccessCode" xml:space="preserve">
-    <value>código de acceso</value>
+  <data name="RecoverPasswordMsg" xml:space="preserve">
+    <value>ingrese su correo electrónico para recuperar su contraseña</value>
   </data>
-  
+  <data name="LetsStarted" xml:space="preserve">
+    <value>empecemos</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>bienvenido</value>
+  </data>
 </root>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:GuestBooker.Converters;assembly=GuestBooker"
              x:Class="GuestBooker.App">
     <Application.Resources>
         
@@ -46,7 +47,9 @@
             </Style>
             <!-- Fin Estilo Entrys -->
 
-
+            <!-- Converters -->
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converters:LowerConverter x:Key="LowerConverter"/>
 
         </ResourceDictionary>
 

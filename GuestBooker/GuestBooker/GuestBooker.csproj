@@ -54,6 +54,7 @@
     <Folder Include="ViewModels\Base\" />
     <Folder Include="ViewModels\Main\" />
     <Folder Include="Views\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\AppResources.Designer.cs">

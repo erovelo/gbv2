@@ -8,10 +8,41 @@ namespace GuestBooker.ViewModels.Main
 {
     public class LoginViewModel : ViewModelBase
     {
-        // Pos del cv de formulario
-        public int PosCV { get; set; }
+        public int PosCV { get; set; } // Pos del CV de formulario
+
+        public bool IsShowingAccessCode { get; set; } // Vista de AccessCode
+        public bool IsShowingMailPass { get; set; } // Vista de MailPass
+        public bool IsShowingConceptBranch{ get; set; } // Vista de Concepto y Sucursal
+        public bool IsShowingRecoverPassword { get; set; } // Vista Recuperar contraseña
 
         #region Commands
+        // Se manda para mostrar la vista de accesscode
+        public ICommand ShowLoginCommand => new Command(async () => ShowLoginView());
+        private async Task ShowLoginView()
+        {
+            PosCV = 0;
+        }
+
+        // Se manda para mostrar la vista de concepto y sucursal
+        public ICommand ShowConceptBranchViewCommand => new Command(async () => ShowConceptBranchView());
+        private async Task ShowConceptBranchView()
+        {
+            PosCV = 1;
+            IsShowingConceptBranch = true;
+            IsShowingRecoverPassword = false;
+        }
+
+
+        // Se manda para mostrar la vista de recuperar contraseña
+        public ICommand ShowRecoverPasswordViewCommand => new Command(async () => ShowRecoverPasswordView());
+        private async Task ShowRecoverPasswordView()
+        {
+            PosCV = 1;
+            IsShowingConceptBranch = false;
+            IsShowingRecoverPassword = true;
+        }
+
+        // Se manda a llamar cuando se loguea con su access code
         public ICommand LoginAccessCodeCommand => new Command(async () => LoginAccessCode());
         private async Task LoginAccessCode()
         {
@@ -19,9 +50,16 @@ namespace GuestBooker.ViewModels.Main
             await Task.Delay(5000);
             IsBusy = false;
         }
+
+        // Se manda a llamar cuando se loguea con mail y pass
+        public ICommand LoginMailPassCommand => new Command(async () => LoginMailPass());
+        private async Task LoginMailPass()
+        {
+            IsBusy = true;
+            IsShowingConceptBranch = true;
+            PosCV = 1;
+            IsBusy = false;
+        }
         #endregion
-
-
-        public ICommand TestCommand => new Command(() => PosCV = 1);
     }
 }

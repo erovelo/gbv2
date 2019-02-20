@@ -35,7 +35,7 @@
                 <StackLayout Grid.Column="2" x:Name="Logins" Orientation="Horizontal" Spacing="0" Opacity="0">
                     <Image Source="icon_wh_lineV.png" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="Start"/>
                     <cv:CarouselViewControl x:Name="LoginsCV" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                                            Position="{Binding PosCV, Mode=TwoWay}" Margin="30, 0">
+                                            Position="{Binding PosCV, Mode=TwoWay}" Margin="30, 0" IsSwipeEnabled="false">
                         <cv:CarouselViewControl.ItemsSource>
                             <x:Array Type="{x:Type View}">
                                 <!-- Logins -->
@@ -53,11 +53,17 @@
                                     <Label Grid.Row="1" Text="{lang:Translate Welcome}" Style="{StaticResource TitleStyle}" HorizontalTextAlignment="Start"/>
 
                                     <Grid Grid.Row="2">
+                                        
                                         <!-- Login ID -->
-                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="true">
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="{Binding IsShowingAccessCode}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}">
+                                            
+                                            <!-- Entry AccessCode -->
                                             <ctrls:CustomEntry Placeholder="{lang:Translate AccessCode}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 0"
                                                                ReturnCommand="{Binding LoginAccessCodeCommand}"/>
-                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="50, 10">
+                                            <!-- Fin Entry AccessCode -->
+                                            
+                                            <!-- Button RecoverPassword -->
+                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="50, 10" Command="{Binding ShowRecoverPasswordViewCommand}">
                                                 <ctrls:CustomButton.Content>
                                                     <StackLayout Orientation="Horizontal">
                                                         <Label Text="{lang:Translate RecoverPassword}" Style="{StaticResource LabelStyle}" VerticalOptions="CenterAndExpand"/>
@@ -65,21 +71,123 @@
                                                     </StackLayout>
                                                 </ctrls:CustomButton.Content>
                                             </ctrls:CustomButton>
+                                            <!-- Fin Button RecoverPassword -->
+                                            
+                                            <!-- Button LoginAccessCode -->
                                             <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20" Command="{Binding LoginAccessCodeCommand}">
                                                 <ctrls:CustomButton.Content>
                                                     <Image Source="icon_wh_arrow_right.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40"/>
                                                 </ctrls:CustomButton.Content>
                                             </ctrls:CustomButton>
+                                            <!-- Fin Button LoginAccessCode -->
+                                            
                                         </StackLayout>
                                         <!-- Fin Login ID -->
 
-                                        <!-- Login user y pass -->
-                                        <!-- Fin Login user y pass  -->
+                                        <!-- Login mail y pass -->
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="true" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}">
+                                            
+                                            <!-- Entry Mail -->
+                                            <ctrls:CustomEntry Placeholder="{lang:Translate Mail}" Style="{StaticResource EntryStyle}" Keyboard="Email" HorizontalOptions="FillAndExpand" Margin="50, 0"/>
+                                            <!-- Fin Entry Mail -->
+                                            
+                                            <!-- Entry Password -->
+                                            <ctrls:CustomEntry Placeholder="{lang:Translate Password}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 10, 50, 0"
+                                                               ReturnCommand="{Binding LoginMailPassCommand}"/>
+                                            <!-- Fin Entry Password -->
+                                            
+                                            <!-- Button RecoverPassword -->
+                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="50, 10" Command="{Binding ShowRecoverPasswordViewCommand}">
+                                                <ctrls:CustomButton.Content>
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <Label Text="{lang:Translate RecoverPassword}" Style="{StaticResource LabelStyle}" VerticalOptions="CenterAndExpand"/>
+                                                        <Image Source="icon_wh_lock.png" VerticalOptions="CenterAndExpand" WidthRequest="25" HeightRequest="25"/>
+                                                    </StackLayout>
+                                                </ctrls:CustomButton.Content>
+                                            </ctrls:CustomButton>
+                                            <!-- Fin Button RecoverPassword -->
+                                            
+                                            <!-- Button LoginMailPass -->
+                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20" Command="{Binding LoginMailPassCommand}">
+                                                <ctrls:CustomButton.Content>
+                                                    <Image Source="icon_wh_arrow_right.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40"/>
+                                                </ctrls:CustomButton.Content>
+                                            </ctrls:CustomButton>
+                                            <!-- Fin Button LoginMailPass -->
+                                            
+                                        </StackLayout>
+                                        <!-- Fin Login mail y pass  -->
                                     </Grid>
                                 </Grid>
                                 <!-- Fin Logins -->
                                 
-                                <BoxView BackgroundColor="Red"/>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                                                    
+                                    <Label Grid.Row="1" Text="{lang:Translate LetsStarted}" Style="{StaticResource TitleStyle}" HorizontalTextAlignment="Start"/>
+                                    
+                                    <Grid Grid.Row="2">
+                                        <!-- Concepto y Sucursal -->
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="{Binding IsShowingConceptBranch}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}">
+                                            
+                                            <!-- Entry Mail -->
+                                            <Picker Title="sucursal" Margin="50,0"/>
+                                            <!-- Fin Entry Mail -->
+                                            
+                                            <!-- Entry Password -->
+                                            <ctrls:CustomEntry Placeholder="{lang:Translate Password}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 10, 50, 0"
+                                                               ReturnCommand="{Binding ConceptBranchSelectedCommand}"/>
+                                            <!-- Fin Entry Password -->
+                                                                                       
+                                            <!-- Button GoToViews -->
+                                            <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20" Command="{Binding ConceptBranchSelectedCommand}">
+                                                <ctrls:CustomButton.Content>
+                                                    <Image Source="icon_wh_arrow_right.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40"/>
+                                                </ctrls:CustomButton.Content>
+                                            </ctrls:CustomButton>
+                                            <!-- Fin Button GoToViews -->
+                                            
+                                        </StackLayout>
+                                        <!-- Fin Concepto y Sucursal -->
+                                        
+                                        <!-- Recuperar contraseña -->
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="{Binding IsShowingRecoverPassword}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}">
+                                            
+                                            <Label Text="{lang:Translate RecoverPasswordMsg}" Style="{StaticResource LabelStyle}" Margin="70, 10" HorizontalTextAlignment="Center" VerticalTextAlignment="End"/>
+                                            
+                                            <!-- Entry Mail -->
+                                            <ctrls:CustomEntry Placeholder="{lang:Translate Mail}" Style="{StaticResource EntryStyle}" Keyboard="Email" HorizontalOptions="FillAndExpand" Margin="50, 0"
+                                                               ReturnCommand="{Binding RecoverPasswordCommand}"/>
+                                            <!-- Fin Entry Mail -->
+                                            
+                                            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                                <!-- Button BackToLoginView -->
+                                                <ctrls:CustomButton HorizontalOptions="StartAndExpand" Margin="0, 20" Command="{Binding ShowLoginCommand}">
+                                                    <ctrls:CustomButton.Content>
+                                                        <Image Source="icon_wh_arrow_right.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40" Rotation="180"/>
+                                                    </ctrls:CustomButton.Content>
+                                                </ctrls:CustomButton>
+                                                <!-- Fin Button BackToLoginView -->
+                                                
+                                                <!-- Button RecoverPassword -->
+                                                <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20" Command="{Binding RecoverPasswordCommand}">
+                                                    <ctrls:CustomButton.Content>
+                                                        <Image Source="icon_wh_arrow_right.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40"/>
+                                                    </ctrls:CustomButton.Content>
+                                                </ctrls:CustomButton>
+                                                <!-- Fin Button RecoverPassword -->
+                                            </StackLayout>
+                                            
+                                        </StackLayout>
+                                        <!-- Fin Recuperar contraseña-->
+                                    </Grid>
+                                    
+                                    
+                                </Grid>
                             </x:Array>
                         </cv:CarouselViewControl.ItemsSource>
                     </cv:CarouselViewControl>
