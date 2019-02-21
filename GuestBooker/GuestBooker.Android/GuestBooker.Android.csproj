@@ -74,6 +74,7 @@
     <Compile Include="Renderers\CustomEntryRendererDroid.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\CustomPickerRendererDroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -97,6 +98,9 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_arrow_down.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_arrow_down.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_arrow_down.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

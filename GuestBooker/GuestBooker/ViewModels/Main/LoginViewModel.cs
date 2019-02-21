@@ -46,9 +46,7 @@ namespace GuestBooker.ViewModels.Main
         public ICommand LoginAccessCodeCommand => new Command(async () => LoginAccessCode());
         private async Task LoginAccessCode()
         {
-            IsBusy = true;
-            await Task.Delay(5000);
-            IsBusy = false;
+            GoToHomeView();
         }
 
         // Se manda a llamar cuando se loguea con mail y pass
@@ -59,6 +57,23 @@ namespace GuestBooker.ViewModels.Main
             IsShowingRecoverPassword = false;
             IsShowingConceptBranch = true;
             PosCV = 1;
+            IsBusy = false;
+        }
+
+        // Se manda a llamar cuando se selecciona concepto y sucursal
+        public ICommand ConceptBranchSelectedCommand => new Command(async () => ConceptBranchSelected());
+        private async Task ConceptBranchSelected()
+        {
+            GoToHomeView();
+        }
+
+
+        // Navega hacia el Home
+        private async Task GoToHomeView()
+        {
+            IsBusy = true;
+            await Task.Delay(2000);
+            await NavigationService.NavigateToAsync<HomeViewModel>();
             IsBusy = false;
         }
         #endregion

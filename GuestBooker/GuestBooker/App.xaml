@@ -46,6 +46,21 @@
                 </Style.Triggers>
             </Style>
             <!-- Fin Estilo Entrys -->
+            
+            <!-- Estilo Picker -->
+            <Style x:Key="PickerStyle" TargetType="Picker">
+                <Setter Property="FontFamily" Value="{StaticResource Gotham}"/>
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="FontSize" Value="19"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Opacity" Value="0.7"/>
+                <Style.Triggers>
+                    <Trigger TargetType="Picker" Property="IsFocused" Value="true">
+                        <Setter Property="Opacity" Value="1"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <!-- Fin Estilo Picker -->
 
             <!-- Converters -->
             <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>

@@ -65,11 +65,11 @@ namespace GuestBooker.Services
         protected virtual async Task InternalNavigateToAsync(Type viewModelType, object parameter)
         {
             Page page = CreateAndBindPage(viewModelType, parameter);
-            CustomNavigationPage nav = new CustomNavigationPage(page);
-            nav.BarTextColor = Color.White;
-            nav.BackgroundColor = Color.Black;
-            nav.LeftColor = Color.FromHex("#36782d");
-            nav.RightColor = Color.FromHex("#afd63f");
+            CustomNavigationPage nav = new CustomNavigationPage(page)
+            {
+                BarTextColor = Color.White,
+                BackgroundColor = Color.Black,
+            };
 
             if (page is SplashPage)
             {

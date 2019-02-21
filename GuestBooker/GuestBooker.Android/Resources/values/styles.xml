@@ -31,11 +31,11 @@
 	<style name="MyTheme.Splash" parent="Theme.AppCompat.Light.NoActionBar">
 		<item name="android:windowBackground">@drawable/splash_background</item>
 
-		<item name="colorPrimary">#000000</item>
+		<item name="colorPrimary">#1a1a1a</item>
 		<!-- colorPrimaryDark is used for the status bar -->
-		<item name="colorPrimaryDark">#000000</item>
+		<item name="colorPrimaryDark">#1a1a1a</item>
 		<!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-		<item name="colorAccent">#e6e6e6</item>
+		<item name="colorAccent">#1a1a1a</item>
 	</style>
 </resources>

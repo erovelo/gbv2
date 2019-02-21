@@ -135,13 +135,30 @@
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="50, 25, 50, 0" IsVisible="{Binding IsShowingConceptBranch}" IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBoolConverter}}">
                                             
                                             <!-- Picker Concept -->
-                                            <ctrls:CustomPicker HorizontalOptions="FillAndExpand" Margin="50, 0"/>
+                                            <ctrls:CustomPicker ItemDisplayBinding="{Binding ., Converter={StaticResource LowerConverter}}" HorizontalOptions="FillAndExpand" Margin="50, 0">
+                                                <ctrls:CustomPicker.ItemsSource>
+                                                    <x:Array Type="{x:Type x:String}">
+                                                        <x:String>Concepto 1</x:String>
+                                                        <x:String>Concepto 2</x:String>
+                                                        <x:String>Concepto 3</x:String>
+                                                        <x:String>Concepto 4</x:String>
+                                                    </x:Array>
+                                                </ctrls:CustomPicker.ItemsSource>
+                                            </ctrls:CustomPicker>
                                             <!-- Fin Picker Concept -->
                                             
-                                            <!-- Entry Password -->
-                                            <ctrls:CustomEntry Placeholder="{lang:Translate Password}" IsPassword="True" Style="{StaticResource EntryStyle}" HorizontalOptions="FillAndExpand" Margin="50, 10, 50, 0"
-                                                               ReturnCommand="{Binding ConceptBranchSelectedCommand}"/>
-                                            <!-- Fin Entry Password -->
+                                            <!-- Picker Sucursal -->
+                                            <ctrls:CustomPicker ItemDisplayBinding="{Binding ., Converter={StaticResource LowerConverter}}" HorizontalOptions="FillAndExpand" Margin="50, 10, 50, 0">
+                                                <ctrls:CustomPicker.ItemsSource>
+                                                    <x:Array Type="{x:Type x:String}">
+                                                        <x:String>Sucursal 1</x:String>
+                                                        <x:String>Sucursal 2</x:String>
+                                                        <x:String>Sucursal 3</x:String>
+                                                        <x:String>Sucursal 4</x:String>
+                                                    </x:Array>
+                                                </ctrls:CustomPicker.ItemsSource>
+                                            </ctrls:CustomPicker>
+                                            <!-- Fin Picker Sucursal -->
                                                                                        
                                             <!-- Button GoToViews -->
                                             <ctrls:CustomButton HorizontalOptions="EndAndExpand" Margin="0, 20" Command="{Binding ConceptBranchSelectedCommand}">
