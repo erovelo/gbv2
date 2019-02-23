@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuestBooker.Pages.Main.HomePage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:lang="clr-namespace:GuestBooker.Helper;assembly=GuestBooker"
+             x:Class="GuestBooker.Pages.Main.HomePage">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label Text="Home"/>
-        </StackLayout>
+        <Grid BackgroundColor="Black">
+            <!--Operacion-->
+            <cv:CarouselViewControl x:Name="cv">
+                <cv:CarouselViewControl.ItemsSource>
+                    <x:Array Type="{x:Type View}">
+                        <BoxView BackgroundColor="Red"/>
+                        <BoxView BackgroundColor="Green"/>
+                        <BoxView BackgroundColor="Yellow"/>
+                        <BoxView BackgroundColor="DodgerBlue"/>
+                        <BoxView BackgroundColor="Purple"/>
+                        <BoxView BackgroundColor="Brown"/>
+                        <BoxView BackgroundColor="Silver"/>
+                    </x:Array>
+                </cv:CarouselViewControl.ItemsSource>
+            </cv:CarouselViewControl>
+            <!--Fin Operacion-->
+            
+            <
+
+            <BoxView BackgroundColor="Olive" WidthRequest="50" HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
