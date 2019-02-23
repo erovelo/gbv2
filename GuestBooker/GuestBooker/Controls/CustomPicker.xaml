@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuestBooker.Controls.CustomPicker">
+    <ContentView.Content>
+        <Grid>
+            <Picker x:Name="PickerControl" Style="{StaticResource PickerStyle}" HorizontalOptions="FillAndExpand"/>
+            <ImageButton Source="icon_wh_arrow_down.png" Margin="0,0,15,0" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Opacity="0.7" Clicked="Handle_Clicked" HeightRequest="30" BackgroundColor="Transparent">
+                <ImageButton.Triggers>
+                    <DataTrigger TargetType="ImageButton" Binding="{Binding Source={x:Reference PickerControl}, Path=IsFocused}" Value="true">
+                        <Setter Property="Opacity" Value="1"/>
+                    </DataTrigger>
+                </ImageButton.Triggers>
+            </ImageButton>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
