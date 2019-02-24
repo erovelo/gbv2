@@ -31,16 +31,29 @@ namespace GuestBooker.Pages.Main
 
             // Show logo
             await Task.Delay(2000);
+
+            // Posicionando el logo en el centro
+            var w = (Application.Current.MainPage.Width / 2f) - 200;
+            LogoImg.TranslationX = w;
+
+            // Mostrando y moviendo logo
             await LogoImg.FadeTo(1, 1200, Easing.SinIn);
-            
+            await LogoImg.TranslateTo(0, 0, 1000);
+
+            // Mostrando controles
+            BgDark.FadeTo(0.5, 1200);
+            Logins.FadeTo(1, 1200);
+
             // Move logo to left
-            var MoveLogoAnimation = new Animation(v => ColLogoSpacing.Width = new GridLength(v, GridUnitType.Star), 1, 0);
-            MoveLogoAnimation.Commit(this, "MoveLogoAnimation", 16, 1000, Easing.SinInOut, (v, c) => 
+            /*
+            var MoveLogoAnimation = new Animation(v => ColLogoSpacing.Width = new GridLength(v,GridUnitType.Star), 1, 0);
+            MoveLogoAnimation.Commit(this, "MoveLogoAnimation", 20, 1000, Easing.Linear, (v, c) => 
             {
                 // Mostrar login
                 BgDark.FadeTo(0.5, 1200);
                 Logins.FadeTo(1, 1200);
             });
+            */
         }
     }
 }

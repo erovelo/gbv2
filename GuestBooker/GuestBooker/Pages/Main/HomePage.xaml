@@ -6,7 +6,12 @@
              xmlns:lang="clr-namespace:GuestBooker.Helper;assembly=GuestBooker"
              x:Class="GuestBooker.Pages.Main.HomePage">
     <ContentPage.Content>
-        <Grid BackgroundColor="Black" Padding="0,20,0,0">
+        <Grid BackgroundColor="Black">
+            <Grid.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,20,0,0"/>
+                </OnPlatform>
+            </Grid.Margin>
             <!--Operacion-->
             <cv:CarouselViewControl x:Name="cv">
                 <cv:CarouselViewControl.ItemsSource>

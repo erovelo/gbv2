@@ -13,9 +13,9 @@
             <!-- Fin Fondo -->
             
             <!-- Logo y Logins -->
-            <Grid HorizontalOptions="FillAndExpand" HeightRequest="400" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
+            <Grid x:Name="GridCont" HorizontalOptions="FillAndExpand" HeightRequest="400" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" x:Name="ColLogoSpacing"/>
+                    <ColumnDefinition Width="0" x:Name="ColLogoSpacing"/>
                     <ColumnDefinition Width="400" x:Name="ColLogo"/>
                     <ColumnDefinition Width="*" x:Name="ColLogin"/>
                 </Grid.ColumnDefinitions>
