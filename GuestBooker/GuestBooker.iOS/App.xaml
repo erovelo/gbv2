@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:GuestBooker.Converters;assembly=GuestBooker"
+             x:Class="GuestBooker.App">
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            
+        <!-- Fonts -->
+            <OnPlatform x:TypeArguments="x:String" x:Key="Gotham">
+                <On Platform="Android" Value="Gotham.otf#Open Sans" />
+                <On Platform="iOS" Value="Gotham"/>
+            </OnPlatform>
+            
+            <OnPlatform x:TypeArguments="x:String" x:Key="GothamMedium">
+                <On Platform="Android" Value="GothamMedium.otf#Open Sans" />
+                <On Platform="iOS" Value="GothamMedium"/>
+            </OnPlatform>
+        <!-- Fin Fonts -->
+            
+        <!-- Estilo Labels -->
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource Gotham}"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+
+            <Style x:Key="TitleStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="44"/>
+            </Style>
+        <!-- Fin Estilo Labels -->
+
+        <!-- Estilo Entrys -->
+            <Style x:Key="EntryStyle" TargetType="Entry">
+                <Setter Property="FontFamily" Value="{StaticResource Gotham}"/>
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="FontSize" Value="19"/>
+                <Setter Property="PlaceholderColor" Value="White"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="IsSpellCheckEnabled" Value="false"/>
+                <Setter Property="Opacity" Value="0.7"/>
+                <Style.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="true">
+                        <Setter Property="Opacity" Value="1"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        <!-- Fin Estilo Entrys -->
+            
+        <!-- Estilo Picker -->
+            <Style x:Key="PickerStyle" TargetType="Picker">
+                <Setter Property="FontFamily" Value="{StaticResource Gotham}"/>
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="FontSize" Value="19"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Opacity" Value="0.7"/>
+                <Style.Triggers>
+                    <Trigger TargetType="Picker" Property="IsFocused" Value="true">
+                        <Setter Property="Opacity" Value="1"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        <!-- Fin Estilo Picker -->
+            
+        <!-- Estilos BoxViews -->
+            <Style x:Key="BoxViewLineStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Opacity" Value="0.3"/>
+            </Style>
+            
+            <Style x:Key="BoxViewBgStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="#1a1a1a"/>
+            </Style>
+        <!-- Fin Estilos BoxViews -->
+            
+        <!-- Estilo Nav -->
+            <Style x:Key="NavStyle" TargetType="Grid">
+                <Setter Property="ColumnSpacing" Value="0"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+                <Setter Property="HeightRequest" Value="80"/>
+                <Setter Property="BackgroundColor" Value="#5000"/>
+                
+            </Style>
+            
+            <ColumnDefinitionCollection x:Key="NavColumnDefinitions">
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="80"/>
+            </ColumnDefinitionCollection>
+        <!-- Fin Estilo Nav -->
+            
+        <!-- Estilos Menu Nav -->
+            <Style x:Key="ButtonNavStyle" TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger TargetType="View" Property="IsEnabled" Value="false">
+                        <Setter Property="BackgroundColor" Value="#2000"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        <!-- Fin Estilos Menu Nav -->
+            
+            
+        <!-- Estilo Footer -->
+            <Style x:Key="FooterStyle" TargetType="Grid">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                <Setter Property="HeightRequest" Value="80"/>
+            </Style>
+        <!-- Fin Estilo Footer -->
+            
+        <!-- Estilo iconos -->
+            <Style x:Key="IconStyle" TargetType="View">
+                <Setter Property="Opacity" Value="0.6"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+        <!-- Fin Estilo iconos -->
+
+        <!-- Converters -->
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converters:LowerConverter x:Key="LowerConverter"/>
+        <!-- Fin Converters -->
+            
+            
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

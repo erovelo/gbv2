@@ -100,6 +100,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers\CustomEntryRendererIOS.cs" />
     <Compile Include="Renderers\CustomPickerRendererIOS.cs" />
+    <Compile Include="App.xaml.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' ">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -185,6 +189,33 @@
     <BundleResource Include="Resources\icon_wh_arrow_down.png" />
     <BundleResource Include="Resources\icon_wh_arrow_down%402x.png" />
     <BundleResource Include="Resources\icon_wh_arrow_down%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_access.png" />
+    <BundleResource Include="Resources\icon_wh_menu_access%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_access%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_agreement.png" />
+    <BundleResource Include="Resources\icon_wh_menu_agreement%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_agreement%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_canceled.png" />
+    <BundleResource Include="Resources\icon_wh_menu_canceled%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_canceled%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_emodel.png" />
+    <BundleResource Include="Resources\icon_wh_menu_emodel%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_emodel%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_finishes.png" />
+    <BundleResource Include="Resources\icon_wh_menu_finishes%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_finishes%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_reservations.png" />
+    <BundleResource Include="Resources\icon_wh_menu_reservations%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_reservations%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_search.png" />
+    <BundleResource Include="Resources\icon_wh_menu_search%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_search%403x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_tables.png" />
+    <BundleResource Include="Resources\icon_wh_menu_tables%402x.png" />
+    <BundleResource Include="Resources\icon_wh_menu_tables%403x.png" />
+    <BundleResource Include="Resources\icon_wh_userconfig.png" />
+    <BundleResource Include="Resources\icon_wh_userconfig%402x.png" />
+    <BundleResource Include="Resources\icon_wh_userconfig%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_wh_logotxt.png" />
@@ -224,5 +255,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

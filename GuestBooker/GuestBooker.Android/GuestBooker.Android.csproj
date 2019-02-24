@@ -101,6 +101,33 @@
     <AndroidResource Include="Resources\drawable\icon_wh_arrow_down.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_arrow_down.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_arrow_down.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_access.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_agreement.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_canceled.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_emodel.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_finishes.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_reservations.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_search.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_menu_tables.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_userconfig.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_access.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_agreement.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_canceled.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_emodel.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_finishes.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_reservations.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_search.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_menu_tables.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_userconfig.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_access.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_agreement.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_canceled.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_emodel.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_finishes.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_reservations.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_search.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_menu_tables.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_userconfig.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

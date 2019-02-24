@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:ctrls="clr-namespace:GuestBooker.Controls"
              xmlns:lang="clr-namespace:GuestBooker.Helper;assembly=GuestBooker"
              x:Class="GuestBooker.Pages.Main.HomePage">
     <ContentPage.Content>
-        <Grid BackgroundColor="Black">
+        <Grid BackgroundColor="Black" Padding="0,20,0,0">
             <!--Operacion-->
             <cv:CarouselViewControl x:Name="cv">
                 <cv:CarouselViewControl.ItemsSource>
@@ -22,13 +23,109 @@
             </cv:CarouselViewControl>
             <!--Fin Operacion-->
             
-            <
-
-            <BoxView BackgroundColor="Olive" WidthRequest="50" HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start">
-                <BoxView.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                </BoxView.GestureRecognizers>
-            </BoxView>
+            <!-- Header -->
+            <Grid Style="{StaticResource NavStyle}" ColumnDefinitions="{StaticResource NavColumnDefinitions}">
+                
+                <!-- Lineas Verticales -->
+                <BoxView Grid.Column="1" Style="{StaticResource BoxViewLineStyle}"/>
+                <BoxView Grid.Column="3" Style="{StaticResource BoxViewLineStyle}"/>
+                <BoxView Grid.Column="5" Style="{StaticResource BoxViewLineStyle}"/>
+                <BoxView Grid.Column="7" Style="{StaticResource BoxViewLineStyle}"/>
+                <BoxView Grid.Column="9" Style="{StaticResource BoxViewLineStyle}"/>
+                <BoxView Grid.Column="11" Style="{StaticResource BoxViewLineStyle}"/>
+                <BoxView Grid.Column="13" Style="{StaticResource BoxViewLineStyle}"/>
+                <BoxView Grid.Column="15" Style="{StaticResource BoxViewLineStyle}"/>
+                <!-- Fin Lineas Verticales -->
+                
+                <!-- Botones Nav -->
+                <Grid Grid.Column="0" Style="{StaticResource ButtonNavStyle}" IsEnabled="false">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_access.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                
+                <Grid Grid.Column="2" Style="{StaticResource ButtonNavStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_tables.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                
+                <Grid Grid.Column="4" Style="{StaticResource ButtonNavStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_reservations.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                
+                <Grid Grid.Column="6" Style="{StaticResource ButtonNavStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_emodel.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                
+                <Grid Grid.Column="8" Style="{StaticResource ButtonNavStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_agreement.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                
+                <Grid Grid.Column="10" Style="{StaticResource ButtonNavStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_finishes.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                
+                <Grid Grid.Column="12" Style="{StaticResource ButtonNavStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_canceled.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                
+                <Grid Grid.Column="14" Style="{StaticResource ButtonNavStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_menu_search.png" Margin="15"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                <!-- Fin Botones Nav -->
+                
+                <!-- Calendario -->
+                <StackLayout Grid.Column="16">
+                    
+                </StackLayout>
+                <!-- Fin Calendario -->
+                
+                <!-- Boton Config -->
+                <Grid Grid.Column="17" Style="{StaticResource BoxViewBgStyle}">
+                    <ctrls:CustomButton>
+                        <ctrls:CustomButton.Content>
+                            <Image Source="icon_wh_userconfig.png" Style="{StaticResource IconStyle}"/>
+                        </ctrls:CustomButton.Content>
+                    </ctrls:CustomButton>
+                </Grid>
+                <!-- Fin Boton Config -->
+                
+            </Grid>
+            <!-- Fin Header -->
+            
+            <!-- Footer -->
+            <Grid Style="{StaticResource FooterStyle}">
+            </Grid>
+            <!-- Fin Footer -->
         </Grid>
     </ContentPage.Content>
 </ContentPage>
