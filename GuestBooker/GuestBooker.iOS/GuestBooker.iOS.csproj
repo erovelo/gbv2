@@ -100,10 +100,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers\CustomEntryRendererIOS.cs" />
     <Compile Include="Renderers\CustomPickerRendererIOS.cs" />
-    <Compile Include="App.xaml.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' ">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -255,11 +251,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="App.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>
