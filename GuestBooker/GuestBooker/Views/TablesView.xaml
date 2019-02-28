@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:slider="clr-namespace:GuestBooker.Views.Base"
+      x:Class="GuestBooker.Views.TablesView">
+    
+    <slider:SliderViewBase BackgroundImage="bg_tables.jpg">
+        <!-- Header -->
+        <slider:SliderViewBase.Header>
+            <Label Text="mesas" Style="{StaticResource TitleViewStyle}" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+        </slider:SliderViewBase.Header>
+        <!-- Fin Header -->
+        
+    </slider:SliderViewBase>
+</Grid>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:ffImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+      x:Class="GuestBooker.Views.Base.SliderViewBase">
+    
+    <ffImage:CachedImage x:Name="cImageBackground" Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+    
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,80,0,80" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Contenido Cabecera -->
+        <ContentView Grid.Row="0" x:Name="ContentHeader"/>
+        <!-- Fin Contenido Cabecera -->
+        
+        <!-- Contenido -->
+        <ContentView Grid.Row="1" x:Name="ContentSlider" BackgroundColor="#3000"/>
+        <!-- Fin de Contenido -->
+    </Grid>
+</Grid>

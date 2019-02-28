@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid ColumnSpacing="0"
+      RowSpacing="0"
+      xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="GuestBooker.Views.Base.DetailViewBase">
+    
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" x:Name="ColumnPrimary"/>
+        <ColumnDefinition Width="84" x:Name="ColumnDetail"/>
+        <ColumnDefinition Width="0" x:Name="ColumnSecundary"/>
+    </Grid.ColumnDefinitions>
+    
+    <!-- Contenido Principal -->
+    <ContentView x:Name="ContentViewPrimary" Grid.Column="0"/>
+    
+    <!-- Contenido Detalle -->
+    <Grid x:Name="ContentViewDetail" Grid.Column="1" ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="85"/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Linea vertical -->
+        <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="#1a1a1a"/>
+        
+        <!-- Pestaña Lado Izquiedo -->
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+            <Image Source="icon_bl_tab_left.png" HorizontalOptions="StartAndExpand" ScaleX="1.15" TranslationX="6"/>
+        </Grid>
+        
+        <!-- Pestaña Lado Derecho -->
+        <BoxView Grid.Row="1" Grid.Column="3" BackgroundColor="#1a1a1a"/> 
+        <Image Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Source="icon_bl_tab_right.png" Aspect="AspectFit" ScaleX="1.15"/>
+        
+        <!-- Detalle Superior -->
+        <ContentView x:Name="ContentViewDetailSup" Grid.Row="0" Grid.Column="1"/>
+        
+        <!-- Detalle Inferior -->
+        <ContentView x:Name="ContentViewDetailInf" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 0, 0, 0"/>
+        
+        <!-- Contenido Menu -->
+        <ContentView x:Name="ContentViewMenu" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" BackgroundColor="#1a1a1a"/>
+        
+        <!-- Fin Detalle Superior -->
+        
+    </Grid>
+    
+    <!-- Contenido Secundario -->
+    <ContentView x:Name="ContentViewSecundary" Grid.Column="2"/>
+    
+    
+    
+</Grid>

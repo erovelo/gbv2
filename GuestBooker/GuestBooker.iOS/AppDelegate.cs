@@ -4,6 +4,7 @@ using System.Linq;
 using CarouselView.FormsPlugin.iOS;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
+using PanCardView.iOS;
 using UIKit;
 
 namespace GuestBooker.iOS
@@ -26,9 +27,10 @@ namespace GuestBooker.iOS
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();
-            LoadApplication(new App());
+            CardsViewRenderer.Preserve();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             AnimationViewRenderer.Init();
-
+            LoadApplication(new App());
             return base.FinishedLaunching(app, options);
         }
     }

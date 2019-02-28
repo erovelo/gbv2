@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:ctrls="clr-namespace:GuestBooker.Controls"
+      xmlns:slider="clr-namespace:GuestBooker.Views.Base"
+      x:Class="GuestBooker.Views.AccessView">
+    
+    <slider:SliderViewBase BackgroundImage="bg_access.jpg">
+        
+        <!-- Fin Header -->
+        <slider:SliderViewBase.Header>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="acceso" Style="{StaticResource TitleViewStyle}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                <Image Source="icon_wh_add.png" HorizontalOptions="End" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Margin="5,0"/>
+                <ctrls:CustomEntry Style="{StaticResource EntryStyle}" Placeholder="teléfono / mail / nombre" WidthRequest="400" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,50,0"/>
+            </StackLayout>
+        </slider:SliderViewBase.Header>
+        <!-- Fin Header -->
+        
+        <!-- Contenido -->
+        <slider:SliderViewBase.Content>
+            <slider:DetailViewBase HiddenDetail="false">
+                <!-- Tabla -->
+                <slider:DetailViewBase.ContentPrimary>
+                    <Grid>
+                        
+                    </Grid>
+                </slider:DetailViewBase.ContentPrimary>
+            </slider:DetailViewBase>
+        </slider:SliderViewBase.Content>
+        <!-- Fin Contenido -->
+        
+    </slider:SliderViewBase>
+</Grid>

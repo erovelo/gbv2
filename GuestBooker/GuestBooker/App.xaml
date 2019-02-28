@@ -28,6 +28,11 @@
             <Style x:Key="TitleStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="FontSize" Value="44"/>
             </Style>
+            
+            <Style x:Key="TitleViewStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="38"/>
+                <Setter Property="Margin" Value="40,0,0,0"/>
+            </Style>
         <!-- Fin Estilo Labels -->
 
         <!-- Estilo Entrys -->
@@ -130,6 +135,18 @@
                 <Setter Property="Margin" Value="10"/>
             </Style>
         <!-- Fin Estilo iconos -->
+            
+        <!-- Estilos Tablas -->
+            <RowDefinitionCollection x:Key="TableRowDefinitions">
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </RowDefinitionCollection>
+            
+            <ColumnDefinitionCollection x:Key="TableColumnDefinitions">
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </ColumnDefinitionCollection>
+        <!-- Fin Estilos Tablas -->
 
         <!-- Converters -->
             <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>

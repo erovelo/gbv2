@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:ctrls="clr-namespace:GuestBooker.Controls"
+             xmlns:ffImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:lang="clr-namespace:GuestBooker.Helper;assembly=GuestBooker"
+             xmlns:views="clr-namespace:GuestBooker.Views"
              x:Class="GuestBooker.Pages.Main.HomePage">
     <ContentPage.Content>
         <Grid BackgroundColor="Black">
-            <Grid.Margin>
+            <Grid.Padding>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="iOS" Value="0,20,0,0"/>
                 </OnPlatform>
-            </Grid.Margin>
-            <!--Operacion-->
+            </Grid.Padding>
+            
+            <!--Operacion -->
             <cv:CarouselViewControl x:Name="cv">
                 <cv:CarouselViewControl.ItemsSource>
                     <x:Array Type="{x:Type View}">
-                        <BoxView BackgroundColor="Red"/>
-                        <BoxView BackgroundColor="Green"/>
-                        <BoxView BackgroundColor="Yellow"/>
-                        <BoxView BackgroundColor="DodgerBlue"/>
-                        <BoxView BackgroundColor="Purple"/>
-                        <BoxView BackgroundColor="Brown"/>
-                        <BoxView BackgroundColor="Silver"/>
+                        <views:AccessView/>
+                        <views:TablesView/>
+                        <views:ReservationsView/>
+                        <views:EModelView/>
+                        <views:AgreementView/>
+                        <views:FinishesView/>
+                        <views:CanceledView/>
+                        <views:SearchView/>
                     </x:Array>
                 </cv:CarouselViewControl.ItemsSource>
             </cv:CarouselViewControl>
-            <!--Fin Operacion-->
+            <!-- Fin Operacion-->
             
             <!-- Header -->
             <Grid Style="{StaticResource NavStyle}" ColumnDefinitions="{StaticResource NavColumnDefinitions}">
@@ -46,7 +51,7 @@
                 <Grid Grid.Column="0" Style="{StaticResource ButtonNavStyle}" IsEnabled="false">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_access.png" Margin="15"/>
+                            <ffImage:CachedImage Source="icon_wh_menu_access.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -54,7 +59,7 @@
                 <Grid Grid.Column="2" Style="{StaticResource ButtonNavStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_tables.png" Margin="15"/>
+                            <ffImage:CachedImage  Source="icon_wh_menu_tables.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -62,7 +67,7 @@
                 <Grid Grid.Column="4" Style="{StaticResource ButtonNavStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_reservations.png" Margin="15"/>
+                            <ffImage:CachedImage  Source="icon_wh_menu_reservations.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -70,7 +75,7 @@
                 <Grid Grid.Column="6" Style="{StaticResource ButtonNavStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_emodel.png" Margin="15"/>
+                            <ffImage:CachedImage  Source="icon_wh_menu_emodel.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -78,7 +83,7 @@
                 <Grid Grid.Column="8" Style="{StaticResource ButtonNavStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_agreement.png" Margin="15"/>
+                            <ffImage:CachedImage  Source="icon_wh_menu_agreement.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -86,7 +91,7 @@
                 <Grid Grid.Column="10" Style="{StaticResource ButtonNavStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_finishes.png" Margin="15"/>
+                            <ffImage:CachedImage  Source="icon_wh_menu_finishes.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -94,7 +99,7 @@
                 <Grid Grid.Column="12" Style="{StaticResource ButtonNavStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_canceled.png" Margin="15"/>
+                            <ffImage:CachedImage  Source="icon_wh_menu_canceled.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -102,7 +107,7 @@
                 <Grid Grid.Column="14" Style="{StaticResource ButtonNavStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_menu_search.png" Margin="15"/>
+                            <ffImage:CachedImage  Source="icon_wh_menu_search.png" Margin="15"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>
@@ -118,7 +123,7 @@
                 <Grid Grid.Column="17" Style="{StaticResource BoxViewBgStyle}">
                     <ctrls:CustomButton>
                         <ctrls:CustomButton.Content>
-                            <Image Source="icon_wh_userconfig.png" Style="{StaticResource IconStyle}"/>
+                            <ffImage:CachedImage Source="icon_wh_userconfig.png" Style="{StaticResource IconStyle}"/>
                         </ctrls:CustomButton.Content>
                     </ctrls:CustomButton>
                 </Grid>

@@ -41,6 +41,10 @@
     <PackageReference Include="Fody" Version="4.0.2" />
     <PackageReference Include="PropertyChanged.Fody" Version="2.6.0" />
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="2.6.3" />
+    <PackageReference Include="CardsView" Version="2.0.3" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataServices\" />
@@ -55,10 +59,7 @@
     <Folder Include="ViewModels\Main\" />
     <Folder Include="Views\" />
     <Folder Include="Converters\" />
-    <Folder Include="CarouselViews\" />
-    <Folder Include="CarouselViews\Operation\" />
-    <Folder Include="CarouselViews\Administration\" />
-    <Folder Include="CarouselViews\Configuration\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\AppResources.Designer.cs">

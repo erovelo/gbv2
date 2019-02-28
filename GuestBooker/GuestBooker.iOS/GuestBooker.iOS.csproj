@@ -169,6 +169,18 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>2.6.3</Version>
     </PackageReference>
+    <PackageReference Include="CardsView">
+      <Version>2.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.4.859</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
+      <Version>2.4.4.859</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.4.859</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -212,6 +224,28 @@
     <BundleResource Include="Resources\icon_wh_userconfig.png" />
     <BundleResource Include="Resources\icon_wh_userconfig%402x.png" />
     <BundleResource Include="Resources\icon_wh_userconfig%403x.png" />
+    <BundleResource Include="Resources\bg_access.jpg" />
+    <BundleResource Include="Resources\bg_agreement.jpg" />
+    <BundleResource Include="Resources\bg_canceled.jpg" />
+    <BundleResource Include="Resources\bg_emodel.jpg" />
+    <BundleResource Include="Resources\bg_finishes.jpg" />
+    <BundleResource Include="Resources\bg_reservations.jpg" />
+    <BundleResource Include="Resources\bg_search.jpg" />
+    <BundleResource Include="Resources\icon_wh_add.png" />
+    <BundleResource Include="Resources\icon_wh_add%402x.png" />
+    <BundleResource Include="Resources\icon_wh_add%403x.png" />
+    <BundleResource Include="Resources\icon_bl_tab_right.png" />
+    <BundleResource Include="Resources\icon_bl_tab_right%402x.png" />
+    <BundleResource Include="Resources\icon_bl_tab_right%403x.png" />
+    <BundleResource Include="Resources\icon_wh_tab_right.png" />
+    <BundleResource Include="Resources\icon_wh_tab_right%402x.png" />
+    <BundleResource Include="Resources\icon_wh_tab_right%403x.png" />
+    <BundleResource Include="Resources\icon_bl_tab_left.png" />
+    <BundleResource Include="Resources\icon_bl_tab_left%402x.png" />
+    <BundleResource Include="Resources\icon_bl_tab_left%403x.png" />
+    <BundleResource Include="Resources\icon_wh_tab_left.png" />
+    <BundleResource Include="Resources\icon_wh_tab_left%402x.png" />
+    <BundleResource Include="Resources\icon_wh_tab_left%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_wh_logotxt.png" />
