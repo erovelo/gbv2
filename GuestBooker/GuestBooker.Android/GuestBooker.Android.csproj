@@ -57,7 +57,7 @@
     <PackageReference Include="Xamarin.Android.Support.Design">
       <Version>28.0.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.135214-pre4" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.169046-pre5" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="28.0.0.1" />
@@ -162,6 +162,24 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_bl_tab_right.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_tab_left.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_tab_right.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_client.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_clients.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_preassign.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_smoke.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_sort.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_timer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_client.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_clients.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_preassign.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_smoke.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_sort.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_timer.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_client.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_clients.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_preassign.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_smoke.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_sort.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_timer.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

@@ -159,7 +159,7 @@
     <PackageReference Include="Plugin.Multilingual">
       <Version>1.0.2</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.0.0.135214-pre4" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.169046-pre5" />
     <PackageReference Include="Fody">
       <Version>4.0.2</Version>
     </PackageReference>
@@ -246,6 +246,24 @@
     <BundleResource Include="Resources\icon_wh_tab_left.png" />
     <BundleResource Include="Resources\icon_wh_tab_left%402x.png" />
     <BundleResource Include="Resources\icon_wh_tab_left%403x.png" />
+    <BundleResource Include="Resources\icon_wh_client.png" />
+    <BundleResource Include="Resources\icon_wh_client%402x.png" />
+    <BundleResource Include="Resources\icon_wh_client%403x.png" />
+    <BundleResource Include="Resources\icon_wh_clients.png" />
+    <BundleResource Include="Resources\icon_wh_clients%402x.png" />
+    <BundleResource Include="Resources\icon_wh_clients%403x.png" />
+    <BundleResource Include="Resources\icon_wh_preassign.png" />
+    <BundleResource Include="Resources\icon_wh_preassign%402x.png" />
+    <BundleResource Include="Resources\icon_wh_preassign%403x.png" />
+    <BundleResource Include="Resources\icon_wh_smoke.png" />
+    <BundleResource Include="Resources\icon_wh_smoke%402x.png" />
+    <BundleResource Include="Resources\icon_wh_smoke%403x.png" />
+    <BundleResource Include="Resources\icon_wh_sort.png" />
+    <BundleResource Include="Resources\icon_wh_sort%402x.png" />
+    <BundleResource Include="Resources\icon_wh_sort%403x.png" />
+    <BundleResource Include="Resources\icon_wh_timer.png" />
+    <BundleResource Include="Resources\icon_wh_timer%402x.png" />
+    <BundleResource Include="Resources\icon_wh_timer%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_wh_logotxt.png" />

@@ -33,7 +33,10 @@
         
         <!-- Pestaña Lado Izquiedo -->
         <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
-            <Image Source="icon_bl_tab_left.png" HorizontalOptions="StartAndExpand" ScaleX="1.15" TranslationX="6"/>
+            <!--
+            <Image Source="icon_bl_tab_left.png" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" ScaleX="1.15" TranslationX="6">
+            </Image>
+            -->
         </Grid>
         
         <!-- Pestaña Lado Derecho -->

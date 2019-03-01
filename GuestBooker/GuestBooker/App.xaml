@@ -137,14 +137,59 @@
         <!-- Fin Estilo iconos -->
             
         <!-- Estilos Tablas -->
+            <Style x:Key="TableStyle" TargetType="Grid">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="ColumnSpacing" Value="0"/>
+                <Setter Property="RowSpacing" Value="0"/>
+            </Style>
+            
+            <Style x:Key="TableHeaderStyle" TargetType="Grid" BasedOn="{StaticResource TableStyle}">
+                <Setter Property="BackgroundColor" Value="#5000"/>
+            </Style>
+            
+            <Style x:Key="TableSortStyle" TargetType="View">
+                <Setter Property="BackgroundColor" Value="#5000"/>
+            </Style>
+            
+            <Style x:Key="TableLineStyle" TargetType="View">
+                <Setter Property="BackgroundColor" Value="#1a1a1a"/>
+            </Style>
+            
+            <OnPlatform x:Key="IconHeaderScale"
+                        x:TypeArguments="x:Double"
+                        Android="1.5"
+                        iOS="1.0"/>
+            
+            <Style x:Key="TableHeaderIconStyle" TargetType="Image">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="Aspect" Value="AspectFit"/>
+                <Setter Property="Scale" Value="{StaticResource IconHeaderScale}"/>
+            </Style>
+            
+            <Style x:Key="TableHeaderIconExpandStyle" TargetType="Image" BasedOn="{StaticResource TableHeaderIconStyle}">
+                <Setter Property="HorizontalOptions" Value="StartAndExpand"/>
+                <Setter Property="Margin" Value="40,0,0,0"/>
+            </Style>
+            
             <RowDefinitionCollection x:Key="TableRowDefinitions">
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
             </RowDefinitionCollection>
             
-            <ColumnDefinitionCollection x:Key="TableColumnDefinitions">
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="40"/>
+            <ColumnDefinitionCollection x:Key="AccessColumnsStyle">
+                <ColumnDefinition Width="*"/> <!-- Nombre -->
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="60"/> <!-- Preasignar -->
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="60"/> <!-- Numero de personas -->
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="60"/> <!-- Fumar -->
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="60"/> <!-- Tiempo -->
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="40"/> <!-- Ordenar -->
             </ColumnDefinitionCollection>
         <!-- Fin Estilos Tablas -->
 
