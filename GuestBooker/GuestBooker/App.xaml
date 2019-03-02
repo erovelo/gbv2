@@ -158,7 +158,7 @@
             
             <OnPlatform x:Key="IconHeaderScale"
                         x:TypeArguments="x:Double"
-                        Android="1.5"
+                        Android="1.0"
                         iOS="1.0"/>
             
             <Style x:Key="TableHeaderIconStyle" TargetType="Image">

@@ -53,7 +53,7 @@
                             <BoxView Grid.Column="9" Style="{StaticResource TableLineStyle}"/>
                         </Grid>
                         <!-- Header -->
-                        
+                        <!-- Lista -->
                     </Grid>
                     <!-- Fin Tabla -->
                 </slider:DetailViewBase.ContentPrimary>

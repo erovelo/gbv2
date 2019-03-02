@@ -162,7 +162,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_bl_tab_right.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_tab_left.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_tab_right.png" />
-    <AndroidResource Include="Resources\drawable\icon_wh_client.png" />
     <AndroidResource Include="Resources\drawable\icon_wh_clients.png" />
     <AndroidResource Include="Resources\drawable\icon_wh_preassign.png" />
     <AndroidResource Include="Resources\drawable\icon_wh_smoke.png" />
@@ -180,6 +179,9 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_smoke.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_sort.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_timer.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_wh_client.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_client.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_client.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />
