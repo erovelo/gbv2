@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using GuestBooker.Services.Interfaces;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using Xamarin.Forms;
 
 namespace GuestBooker.ViewModels.Base
 {
@@ -26,6 +28,11 @@ namespace GuestBooker.ViewModels.Base
             return Task.FromResult(false);
         }
 
+        public ICommand TestCommand => new Command(async () => TestFunc());
+        private async Task TestFunc()
+        {
+            var aux = 0;
+        }
 
         public async Task<PermissionStatus> RequestPermission(Permission permission, string title, string message, string titleDenied)
         {

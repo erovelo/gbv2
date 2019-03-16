@@ -80,6 +80,15 @@
     <PackageReference Include="Xamarin.FFImageLoading.Transformations">
       <Version>2.4.4.859</Version>
     </PackageReference>
+    <PackageReference Include="Refractored.XamForms.PullToRefresh">
+      <Version>2.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="Ansuria.XFGloss">
+      <Version>1.1.3</Version>
+    </PackageReference>
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView">
+      <Version>2.0.11</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -181,7 +190,29 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_timer.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon_wh_client.png" />
     <AndroidResource Include="Resources\drawable\icon_wh_client.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_client.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_camera_error.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_camera_error.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_camera_error.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_tab_left.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_bl_tab_left.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_bl_tab_right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_tab_right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_wh_preassign.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_preassign.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_wh_clients.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_clients.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_smoke.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_wh_smoke.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_sort.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_wh_sort.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon_wh_timer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_wh_timer.png" />
+    <AndroidResource Include="Resources\drawable\icon_bl_photodetail.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_bl_photodetail.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_bl_photodetail.png" />
+    <AndroidResource Include="Resources\drawable\icon_wh_detail_nut.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon_wh_detail_nut.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icon_wh_detail_nut.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

@@ -2,31 +2,38 @@
 <Grid xmlns="http://xamarin.com/schemas/2014/forms" 
       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
       xmlns:ctrls="clr-namespace:GuestBooker.Controls"
-      xmlns:slider="clr-namespace:GuestBooker.Views.Base"
+      xmlns:ffImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+      xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+      xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+      xmlns:base="clr-namespace:GuestBooker.Views.Base"
+      xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
       x:Class="GuestBooker.Views.AccessView">
     
-    <slider:SliderViewBase BackgroundImage="bg_access.jpg">
+    <!-- Contenedor Slider -->
+    <base:SliderViewBase BackgroundImage="bg_access.jpg">
         
         <!-- Fin Header -->
-        <slider:SliderViewBase.Header>
+        <base:SliderViewBase.Header>
             <StackLayout Orientation="Horizontal">
                 <Label Text="acceso" Style="{StaticResource TitleViewStyle}" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
                 <Image Source="icon_wh_add.png" HorizontalOptions="End" HeightRequest="25" WidthRequest="25" Aspect="AspectFit" Margin="5,0"/>
                 <ctrls:CustomEntry Style="{StaticResource EntryStyle}" Placeholder="teléfono / mail / nombre" WidthRequest="400" HorizontalOptions="End" VerticalOptions="CenterAndExpand" Margin="0,0,50,0"/>
             </StackLayout>
-        </slider:SliderViewBase.Header>
+        </base:SliderViewBase.Header>
         <!-- Fin Header -->
         
         <!-- Contenido -->
-        <slider:SliderViewBase.Content>
-            <slider:DetailViewBase HiddenDetail="false">
-                <slider:DetailViewBase.ContentPrimary>
-                    <!-- Tabla -->
-                    <Grid Style="{StaticResource TableStyle}" RowDefinitions="{StaticResource TableRowDefinitions}">
+        <base:SliderViewBase.Content>
+            <!-- Comensales -->
+            <base:DetailViewBase HiddenDetail="{Binding ShowDetail}">
+                
+                <!-- Tabla -->
+                <base:DetailViewBase.ContentPrimary>
+                    <Grid Style="{StaticResource TableStyle}" RowDefinitions="{StaticResource TableRowDefinitions}" ColumnDefinitions="{StaticResource TableColumnDefinitions}">
                         <!-- Header -->
-                        <Grid Grid.Row="0" Style="{StaticResource TableHeaderStyle}" ColumnDefinitions="{StaticResource AccessColumnsStyle}">
+                        <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource TableHeaderStyle}" ColumnDefinitions="{StaticResource AccessColumnsStyle}">
                             <Grid Grid.Column="0">
-                                <ctrls:CustomButton HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Margin="40,0,0,0">
+                                <ctrls:CustomButton HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" Margin="50,0,0,0">
                                     <Image Source="icon_wh_client.png" Style="{StaticResource TableHeaderIconStyle}"/>
                                 </ctrls:CustomButton>
                             </Grid>
@@ -42,9 +49,6 @@
                             <ctrls:CustomButton Grid.Column="8">
                                 <Image Source="icon_wh_timer.png" Style="{StaticResource TableHeaderIconStyle}"/>
                             </ctrls:CustomButton>
-                            <ctrls:CustomButton Grid.Column="10">
-                                <Image Source="icon_wh_sort.png" Style="{StaticResource TableHeaderIconStyle}"/>
-                            </ctrls:CustomButton>
                             
                             <BoxView Grid.Column="1" Style="{StaticResource TableLineStyle}"/>
                             <BoxView Grid.Column="3" Style="{StaticResource TableLineStyle}"/>
@@ -52,14 +56,145 @@
                             <BoxView Grid.Column="7" Style="{StaticResource TableLineStyle}"/>
                             <BoxView Grid.Column="9" Style="{StaticResource TableLineStyle}"/>
                         </Grid>
-                        <!-- Header -->
+                        
+                        <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource TableHeaderSortStyle}">
+                            <ctrls:CustomButton Command="{Binding HideShowDetailCommand}">
+                                <Image Source="icon_wh_sort.png" Style="{StaticResource TableHeaderIconStyle}"/>
+                            </ctrls:CustomButton>
+                        </Grid>
+                        <!-- Fin Header -->
+                        
+                        <!-- EmptyBox -->
+                        <base:EmptyView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="false"/>
+                        <!-- Fin EmptyBox -->
+                        
                         <!-- Lista -->
+                        <flv:FlowListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Transparent" FlowColumnCount="0" RowHeight="40" FlowItemsSource="{Binding ItemsTest}" IsVisible="true">
+                            <flv:FlowListView.FlowColumnTemplate>
+                                <DataTemplate>
+                                    <Grid Style="{StaticResource TableStyle}" ColumnDefinitions="{StaticResource TableColumnDefinitions}">
+                                        <Grid Grid.Column="0" Style="{StaticResource TableRowStyle}" ColumnDefinitions="{StaticResource AccessColumnsStyle}" ColumnSpacing="0">
+                                            <Grid Grid.Column="0" ColumnDefinitions="{StaticResource PhotoNameColumnStyle}" ColumnSpacing="10">
+                                                <ffImage:CachedImage Grid.Column="0" Style="{StaticResource PhotoCustomerStyle}" Source="h"/>
+                                                <Label Grid.Column="1" Text="eric rovelo cortes" Style="{StaticResource RowLabelStyle}" HorizontalTextAlignment="Start"/>
+                                            </Grid>
+                                            <Label Grid.Column="2" Text="99" Style="{StaticResource RowLabelStyle}"/>
+                                            <Label Grid.Column="4" Text="99" Style="{StaticResource RowLabelStyle}"/>
+                                            <Label Grid.Column="6" Text="99" Style="{StaticResource RowLabelStyle}"/>
+                                            <Label Grid.Column="8" Text="99" Style="{StaticResource RowLabelStyle}"/>
+                                            <BoxView Grid.Column="1" Style="{StaticResource TableLineStyle}"/>
+                                            <BoxView Grid.Column="3" Style="{StaticResource TableLineStyle}"/>
+                                            <BoxView Grid.Column="5" Style="{StaticResource TableLineStyle}"/>
+                                            <BoxView Grid.Column="7" Style="{StaticResource TableLineStyle}"/>
+                                            <BoxView Grid.Column="9" Style="{StaticResource TableLineStyle}"/>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </flv:FlowListView.FlowColumnTemplate>
+                        </flv:FlowListView>
+                        <!-- Fin Lista -->
+                        
+                        <!-- Contadores -->
+                        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource DetailHeaderStyle}"/>
+                        <!-- Fin Contadores -->
                     </Grid>
-                    <!-- Fin Tabla -->
-                </slider:DetailViewBase.ContentPrimary>
-            </slider:DetailViewBase>
-        </slider:SliderViewBase.Content>
+                </base:DetailViewBase.ContentPrimary>
+                <!-- Fin Tabla -->
+                
+                <!-- Detalle Superior -->
+                <base:DetailViewBase.ContentDetailSup>
+                    <Grid Style="{StaticResource TableStyle}" RowDefinitions="{StaticResource TableRowDefinitions}">
+                        <!-- Header -->
+                        <StackLayout Grid.Row="0" Style="{StaticResource DetailHeaderStyle}">
+                            
+                        </StackLayout>
+                        <!-- Fin Header -->
+                        
+                        <!-- Detalle Contenido -->
+                        <Grid Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource TableStyle}" RowDefinitions="{StaticResource DetailRowsDefinitions}" Margin="0,10">
+                            
+                            <!-- Foto y Nombre -->
+                            <Grid Grid.Row="0" ColumnDefinitions="{StaticResource DetailPhotoColumnsDefinitions}" RowDefinitions="{StaticResource DetailPhotoRowsDefinitions}" RowSpacing="0" Margin="20,0">
+                                
+                                <!-- Foto -->
+                                <ctrls:CustomButton Grid.Column="0" Grid.Row="0" Grid.RowSpan="3">
+                                    <ffImage:CachedImage Style="{StaticResource DetailPhotoStyle}">
+                                        <ffImage:CachedImage.Transformations>
+                                            <ffTransformations:CircleTransformation/>
+                                        </ffImage:CachedImage.Transformations>
+                                    </ffImage:CachedImage>
+                                </ctrls:CustomButton>
+                                <!-- Fin Foto -->
+                                
+                                <!-- Mesa -->
+                                <StackLayout Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                                    <Image Source="icon_wh_preassign.png" HorizontalOptions="EndAndExpand"/>
+                                    <Label Text="21" Style="{StaticResource LabelStyle}" FontSize="Large" WidthRequest="30" HorizontalOptions="End" VerticalOptions="CenterAndExpand"
+                                           HorizontalTextAlignment="End"/>
+                                </StackLayout>
+                                
+                                <!-- Nombre -->
+                                <Label Grid.Column="1" Grid.Row="1" Text="eric" Style="{StaticResource DetailNameStyle}"/>
+                                
+                                <!-- Apellido -->
+                                <Label Grid.Column="1" Grid.Row="2" Text="rovelo cortés" Style="{StaticResource DetailLastNameStyle}"/>
+                            </Grid>
+                            <!-- Fin Foto y Nombre -->
+                            
+                            <!-- Linea -->
+                            <BoxView Grid.Row="1" Style="{StaticResource BoxViewLineStyle}" Margin="10,0"/>
+                            
+                            <!-- Fecha y Telefono -->
+                            <StackLayout Grid.Row="3" Orientation="Horizontal" Margin="20,0">
+                                <Label Text="55123456789" VerticalOptions="FillAndExpand" HorizontalOptions="Start" Style="{StaticResource LabelStyle}" FontSize="Small"/>
+                                <Label Text="capturada:" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand" Style="{StaticResource LabelStyle}" FontSize="Small"/>
+                                <Label Text="18/01/2018" VerticalOptions="FillAndExpand" HorizontalOptions="Start" Style="{StaticResource LabelStyle}" FontSize="Small"/>
+                            </StackLayout>
+                            
+                            <!-- Origen y Correo -->
+                            <Grid Grid.Row="4" Margin="20,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Grid.Column="0" Grid.ColumnSpan="2" Text="jorgeeduardo.medrano@gmail.com" Style="{StaticResource LabelStyle}" FontSize="Small" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" LineBreakMode="TailTruncation"/>
+                                <Label Grid.Column="1" Text="opentable" Style="{StaticResource LabelStyle}" FontSize="Small" HorizontalTextAlignment="End" VerticalTextAlignment="Center" IsVisible="false"/>
+                            </Grid>
+                            
+                            <ScrollView Grid.Row="6" BackgroundColor="#3000">
+                                <Label Margin="20,0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       Style="{StaticResource LabelStyle}" FontSize="Micro"
+                                       Text="lorem ipsum dolor sit amet consectetur adipiscing elit commodo id cursus dui"/>
+                            </ScrollView>
+                            
+                            <Grid Grid.Row="7" BackgroundColor="#5000">
+                                <Label Text="información adicional" Style="{StaticResource LabelStyle}" FontSize="Small" Margin="20, 0" VerticalOptions="CenterAndExpand"/>
+                            </Grid>
+                            
+                            <ScrollView Grid.Row="9" Orientation="Horizontal" Margin="20, 0">
+                                <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding ItemsTest}" Spacing="9">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Image Source="icon_wh_detail_nut.png" WidthRequest="20" HeightRequest="20" VerticalOptions="CenterAndExpand" Opacity="0.5"/>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+                            
+                        </Grid>
+                        <!-- Fin Detalle Contenido -->
+                    </Grid>
+                </base:DetailViewBase.ContentDetailSup>
+                <!-- Fin Detalle Superior -->
+                
+            </base:DetailViewBase>
+            <!-- Comensales -->
+        </base:SliderViewBase.Content>
         <!-- Fin Contenido -->
         
-    </slider:SliderViewBase>
+        
+    </base:SliderViewBase>
+    <!-- Fin Contenedor Slider -->
+    
 </Grid>

@@ -7,7 +7,7 @@
     
     <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*" x:Name="ColumnPrimary"/>
-        <ColumnDefinition Width="84" x:Name="ColumnDetail"/>
+        <ColumnDefinition Width="85" x:Name="ColumnDetail"/>
         <ColumnDefinition Width="0" x:Name="ColumnSecundary"/>
     </Grid.ColumnDefinitions>
     
@@ -18,39 +18,37 @@
     <Grid x:Name="ContentViewDetail" Grid.Column="1" ColumnSpacing="0" RowSpacing="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="85"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="40"/>
-            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
         
         <!-- Linea vertical -->
         <BoxView Grid.Row="0" Grid.Column="0" BackgroundColor="#1a1a1a"/>
         
-        <!-- Pestaña Lado Izquiedo -->
-        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
-            <!--
-            <Image Source="icon_bl_tab_left.png" HorizontalOptions="StartAndExpand" VerticalOptions="FillAndExpand" ScaleX="1.15" TranslationX="6">
-            </Image>
-            -->
+        <!-- Pestaña Izquierda -->
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+            <Image Source="icon_bl_tab_left.png" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand"/>
         </Grid>
         
-        <!-- Pestaña Lado Derecho -->
-        <BoxView Grid.Row="1" Grid.Column="3" BackgroundColor="#1a1a1a"/> 
-        <Image Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Source="icon_bl_tab_right.png" Aspect="AspectFit" ScaleX="1.15"/>
+        <!-- Pestaña Derecha -->
+        <Grid Grid.Row="1" Grid.Column="2">
+            <BoxView VerticalOptions="FillAndExpand" WidthRequest="20" HorizontalOptions="EndAndExpand" BackgroundColor="#1a1a1a"/>
+            <Image Source="icon_bl_tab_right.png" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand"/>
+        </Grid>
         
         <!-- Detalle Superior -->
         <ContentView x:Name="ContentViewDetailSup" Grid.Row="0" Grid.Column="1"/>
         
         <!-- Detalle Inferior -->
-        <ContentView x:Name="ContentViewDetailInf" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="30, 0, 0, 0"/>
+        <ContentView x:Name="ContentViewDetailInf" Grid.Row="1" Grid.Column="1" Margin="25,0,0,0"/>
         
         <!-- Contenido Menu -->
-        <ContentView x:Name="ContentViewMenu" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" BackgroundColor="#1a1a1a"/>
+        <ContentView x:Name="ContentViewMenu" Grid.Row="0" Grid.Column="2" BackgroundColor="#1a1a1a"/>
         
         <!-- Fin Detalle Superior -->
         

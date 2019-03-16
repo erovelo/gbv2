@@ -7,7 +7,7 @@ namespace GuestBooker.Views.Base
 {
     public partial class DetailViewBase : Grid
     {
-        public double wHidden = 84;
+        public double wHidden = 85;
         public double wNotHidden = 420;
         public View ContentPrimary { get => ContentViewPrimary.Content; set => ContentViewPrimary.Content = value; }
         public View ContentDetailSup { get => ContentViewDetailSup.Content; set => ContentViewDetailSup.Content = value; }

@@ -2,6 +2,8 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:GuestBooker.Converters;assembly=GuestBooker"
+             xmlns:ffImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffTransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              x:Class="GuestBooker.App">
     <Application.Resources>
         
@@ -31,7 +33,42 @@
             
             <Style x:Key="TitleViewStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="FontSize" Value="38"/>
-                <Setter Property="Margin" Value="40,0,0,0"/>
+                <Setter Property="Margin" Value="45,0,0,0"/>
+            </Style>
+            
+            <Style x:Key="RowLabelStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Style.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding IsSelected}" Value="True">
+                        <Setter Property="TextColor" Value="Black"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            
+            <Style x:Key="DetailNameStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="HorizontalTextAlignment" Value="End"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+            
+            <Style x:Key="DetailLastNameStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="Default"/>
+                <Setter Property="Opacity" Value="0.7"/>
+                <Setter Property="HorizontalTextAlignment" Value="End"/>
+                <Setter Property="VerticalTextAlignment" Value="Start"/>
+            </Style>
+            
+            <Style x:Key="DetailCapturedStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+            
+            <Style x:Key="DetailTelStyle" TargetType="Label" BasedOn="{StaticResource LabelStyle}">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HorizontalTextAlignment" Value="End"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
         <!-- Fin Estilo Labels -->
 
@@ -134,6 +171,11 @@
                 <Setter Property="Opacity" Value="0.6"/>
                 <Setter Property="Margin" Value="10"/>
             </Style>
+            
+            <Style x:Key="PhotoCustomerStyle" TargetType="ffImage:CachedImage">
+                <Setter Property="Aspect" Value="AspectFill"/>
+                <Setter Property="LoadingPlaceholder" Value="icon_wh_camera_error.png"/>
+            </Style>
         <!-- Fin Estilo iconos -->
             
         <!-- Estilos Tablas -->
@@ -146,6 +188,29 @@
             
             <Style x:Key="TableHeaderStyle" TargetType="Grid" BasedOn="{StaticResource TableStyle}">
                 <Setter Property="BackgroundColor" Value="#5000"/>
+            </Style>
+            
+            <Style x:Key="DetailHeaderStyle" TargetType="View">
+                <Setter Property="BackgroundColor" Value="#5000"/>
+            </Style>
+            
+            <Style x:Key="TableHeaderSortStyle" TargetType="View">
+                <Setter Property="BackgroundColor" Value="#5000"/>
+            </Style>
+            
+            <Style x:Key="TableRowStyle" TargetType="Grid" BasedOn="{StaticResource TableStyle}">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Style.Triggers>
+                    <DataTrigger TargetType="Grid" Binding="{Binding IsOdd}" Value="True">
+                        <Setter Property="BackgroundColor" Value="#5fff"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Grid" Binding="{Binding IsOdd}" Value="False">
+                        <Setter Property="BackgroundColor" Value="Transparent"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Grid" Binding="{Binding IsSelected}" Value="True">
+                        <Setter Property="BackgroundColor" Value="#fff"/>
+                    </DataTrigger>
+                </Style.Triggers>
             </Style>
             
             <Style x:Key="TableSortStyle" TargetType="View">
@@ -174,24 +239,73 @@
             </Style>
             
             <RowDefinitionCollection x:Key="TableRowDefinitions">
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
             </RowDefinitionCollection>
+            
+            <ColumnDefinitionCollection x:Key="TableColumnDefinitions">
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+            </ColumnDefinitionCollection>
             
             <ColumnDefinitionCollection x:Key="AccessColumnsStyle">
                 <ColumnDefinition Width="*"/> <!-- Nombre -->
                 <ColumnDefinition Width="1"/>
-                <ColumnDefinition Width="60"/> <!-- Preasignar -->
+                <ColumnDefinition Width="50"/> <!-- Preasignar -->
                 <ColumnDefinition Width="1"/>
-                <ColumnDefinition Width="60"/> <!-- Numero de personas -->
+                <ColumnDefinition Width="50"/> <!-- Numero de personas -->
                 <ColumnDefinition Width="1"/>
-                <ColumnDefinition Width="60"/> <!-- Fumar -->
+                <ColumnDefinition Width="50"/> <!-- Fumar -->
                 <ColumnDefinition Width="1"/>
-                <ColumnDefinition Width="60"/> <!-- Tiempo -->
+                <ColumnDefinition Width="50"/> <!-- Tiempo -->
                 <ColumnDefinition Width="1"/>
-                <ColumnDefinition Width="40"/> <!-- Ordenar -->
+                <!--  <ColumnDefinition Width="40"/> Ordenar -->
             </ColumnDefinitionCollection>
+            
+            <ColumnDefinitionCollection x:Key="PhotoNameColumnStyle">
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </ColumnDefinitionCollection>
+            
         <!-- Fin Estilos Tablas -->
+            
+        <!-- Estilo Detalles -->
+            <RowDefinitionCollection x:Key="DetailRowsDefinitions">
+                <RowDefinition Height="90"/> <!-- Nombre y Fotos -->
+                <RowDefinition Height="1"/> <!-- Linea -->
+                <RowDefinition Height="5"/> <!-- Espacio -->
+                <RowDefinition Height="16"/> <!-- Fecha y Tel -->
+                <RowDefinition Height="16"/> <!-- Source y Correo -->
+                <RowDefinition Height="5"/> <!-- Espacio -->
+                <RowDefinition Height="50"/> <!-- Observaciones -->
+                <RowDefinition Height="20"/> <!-- Label Info  -->
+                <RowDefinition Height="5"/> <!-- Espacio  -->
+                <RowDefinition Height="16"/> <!-- Icono Alergias  -->
+                <RowDefinition Height="20"/> <!-- Alergias  -->
+                <RowDefinition Height="*"/>
+            </RowDefinitionCollection>
+            
+            
+            <ColumnDefinitionCollection x:Key="DetailPhotoColumnsDefinitions">
+                <ColumnDefinition Width="90"/> <!-- Foto -->
+                <ColumnDefinition Width="*"/> <!-- Nombres -->
+            </ColumnDefinitionCollection>
+            
+            <RowDefinitionCollection x:Key="DetailPhotoRowsDefinitions">
+                <RowDefinition Height="*"/> <!-- Mesa -->
+                <RowDefinition Height="*"/> <!-- Nombre -->
+                <RowDefinition Height="*"/> <!-- Apellido -->
+            </RowDefinitionCollection>
+            
+            
+            <Style x:Key="DetailPhotoStyle" TargetType="ffImage:CachedImage">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Source" Value="https://emodelprofilestorage.blob.core.windows.net/model-1735/6a30625e-c4f5-4f33-b892-f78b49440483_t"/>
+                <Setter Property="LoadingPlaceholder" Value="icon_bl_photodetail.png"/>
+                <Setter Property="ErrorPlaceholder" Value="icon_bl_photodetail.png"/>
+            </Style>
+        <!-- Fin Estilo Detalles -->
 
         <!-- Converters -->
             <converters:InverseBoolConverter x:Key="InverseBoolConverter"/>

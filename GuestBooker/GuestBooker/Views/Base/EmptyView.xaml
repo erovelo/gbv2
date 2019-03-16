@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      x:Class="GuestBooker.Views.Base.EmptyView">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="15">
+        <Image Source="icon_wh_emptybox.png" HorizontalOptions="CenterAndExpand"/>
+        <Label Text="no hay elementos disponibles por el momento" Style="{StaticResource LabelStyle}" HorizontalOptions="CenterAndExpand" WidthRequest="250" 
+               HeightRequest="40" HorizontalTextAlignment="Center" VerticalTextAlignment="Start"/>
+    </StackLayout>
+</Grid>

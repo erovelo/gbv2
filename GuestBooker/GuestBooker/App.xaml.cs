@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DLToolkit.Forms.Controls;
 using GuestBooker.Helper;
 using GuestBooker.Pages.Main;
 using GuestBooker.Services;
@@ -19,6 +20,7 @@ namespace GuestBooker
         public App()
         {
             InitializeComponent();
+            FlowListView.Init();
             Instance = this;
 
             if (Xamarin.Forms.Device.iOS == Xamarin.Forms.Device.RuntimePlatform || Xamarin.Forms.Device.Android == Xamarin.Forms.Device.RuntimePlatform)

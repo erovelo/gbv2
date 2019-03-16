@@ -5,6 +5,7 @@ using CarouselView.FormsPlugin.iOS;
 using Foundation;
 using Lottie.Forms.iOS.Renderers;
 using PanCardView.iOS;
+using Refractored.XamForms.PullToRefresh.iOS;
 using UIKit;
 
 namespace GuestBooker.iOS
@@ -30,7 +31,11 @@ namespace GuestBooker.iOS
             CardsViewRenderer.Preserve();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             AnimationViewRenderer.Init();
+            PullToRefreshLayoutRenderer.Init();
+            XFGloss.iOS.Library.Init();
             LoadApplication(new App());
+
+
             return base.FinishedLaunching(app, options);
         }
     }

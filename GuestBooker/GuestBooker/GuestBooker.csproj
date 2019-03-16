@@ -45,6 +45,9 @@
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.4.859" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.4.859" />
+    <PackageReference Include="Refractored.XamForms.PullToRefresh" Version="2.2.3" />
+    <PackageReference Include="Ansuria.XFGloss" Version="1.1.3" />
+    <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataServices\" />
@@ -60,6 +63,10 @@
     <Folder Include="Views\" />
     <Folder Include="Converters\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\SelectableItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\AppResources.Designer.cs">

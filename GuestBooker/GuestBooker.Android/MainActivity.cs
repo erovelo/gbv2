@@ -9,6 +9,7 @@ using Android.OS;
 using CarouselView.FormsPlugin.Android;
 using Lottie.Forms.Droid;
 using PanCardView.Droid;
+using Refractored.XamForms.PullToRefresh.Droid;
 
 namespace GuestBooker.Droid
 {
@@ -21,14 +22,16 @@ namespace GuestBooker.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
+            //global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             CarouselViewRenderer.Init();
             CardsViewRenderer.Preserve();
             AnimationViewRenderer.Init();
+            //PullToRefreshLayoutRenderer.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             LoadApplication(new App());
+            XFGloss.Droid.Library.Init(this, savedInstanceState);
         }
     }
 }
